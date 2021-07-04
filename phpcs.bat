@@ -1,8 +1,4 @@
-@echo off
-set v_params=%*
-
-if defined v_params (
-    set v_params=%v_params:\=/% 
-)
-
-bash -c "phpcs --standard=WordPress-Extra `echo %v_params:"=\"% | sed 's/C:/\/mnt\/c/i'`"
+@ECHO OFF
+setlocal DISABLEDELAYEDEXPANSION
+SET BIN_TARGET=C:\Users\Rolle\AppData\Roaming\Composer\vendor\squizlabs\php_codesniffer\bin\phpcs
+C:\UnxUtils\php-7.3.29-nts-Win32-VC15-x86\php.exe "%BIN_TARGET%" %*
